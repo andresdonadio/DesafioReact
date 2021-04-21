@@ -1,5 +1,4 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { usesState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Cards from "./components/Cards";
