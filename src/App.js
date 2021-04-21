@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { usesState } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Cards from "./components/Cards";
+import Carrusel from "./components/Carrusel";
+import { useState } from "react";
 
 function App() {
+  const [seccion, setSeccion] = useState("Cards");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <Navbar setSeccion={setSeccion} />
+      </div>
+      {seccion === "Cards" && (
+        <div>
+          <Cards />
+        </div>
+      )}
+      {seccion === "Carrusel" && (
+        <div className="container">
+          <Carrusel />
+        </div>
+      )}
     </div>
   );
 }
